@@ -1,6 +1,6 @@
 # 🛡️ AdmitGuard — Admission Data Validation System
 
-## What is this?
+## Introduction
 AdmitGuard is a smart web form that replaces the 
 unstructured Excel-based candidate tracking system 
 used in the admission process.
@@ -34,17 +34,17 @@ A browser-based form that:
 
 ## Folder Structure
 admitguard-yourname/
-├── README.md
-├── research-notes.md
-├── sprint-log.md
-├── prompts/
-│   └── prompt-01-foundation.md
-├── docs/
-│   └── architecture.md
-└── src/
-    └── index.html
+    ├── README.md
+    ├── research-notes.md
+    ├── sprint-log.md
+    ├── prompts/
+    │       └── prompt-01-foundation.md
+    ├── docs/
+    │       └── architecture.md
+    └── src/
+        └── index.html
 
 
 ## Author
-Your Name — PG Diploma in AI-ML & Agentic AI Engineering
+Aditi Garg — PG Diploma in AI-ML & Agentic AI Engineering
 IIT Gandhinagar — Cohort 2026
