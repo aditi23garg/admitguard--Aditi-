@@ -1,65 +1,50 @@
-# 🛡️ AdmitGuard  
-### Admission Data Validation & Compliance System
+# 🛡️ AdmitGuard — Admission Data Validation System
 
----
+## What is this?
+AdmitGuard is a smart web form that replaces the 
+unstructured Excel-based candidate tracking system 
+used in the admission process.
 
-## 📌 Project Overview
+It enforces eligibility rules at the point of data 
+entry, handles exceptions with proper documentation, 
+and maintains a full audit trail of all submissions.
 
-AdmitGuard is a rule-based admission validation system designed to address data integrity issues in the internal admission workflow.
+## The Problem We're Solving
+- Candidate data entered into Excel with zero validation
+- Ineligible candidates only caught at the last stage
+- No audit trail for exception decisions
+- Rules are painful to update
 
-The system enforces eligibility rules at the point of operational data entry, supports structured exception handling, and maintains an audit trail for compliance monitoring.
+## Our Solution
+A browser-based form that:
+- Validates all 11 candidate fields in real-time
+- Blocks submission if strict rules are violated
+- Allows soft-rule exceptions with documented rationale
+- Logs all submissions with timestamps and exception details
 
-This project is built using AI-assisted development (Google AI Studio – Build Mode).
+## Tech Stack
+- HTML, CSS, JavaScript (single file)
+- Built using Claude AI (Vibe Coding approach)
+- localStorage for data persistence (no backend needed)
 
----
+## How to Run
+1. Clone this repository
+2. Open src/index.html in Chrome browser
+3. That's it — no installation needed!
 
-## 🚨 Business Problem
+## Folder Structure
+admitguard-yourname/
+├── README.md
+├── research-notes.md
+├── sprint-log.md
+├── prompts/
+│   └── prompt-01-foundation.md
+├── docs/
+│   └── architecture.md
+└── src/
+    └── index.html
 
-The current admission workflow relies on manual data entry into Excel sheets.
 
-- No system-enforced validation at entry
-- Eligibility checks depend on human judgment
-- Ineligible candidates progress through the pipeline
-- Errors are detected late during document verification
-- No structured tracking of exceptions
-- Compliance and operational risks increase
-
-The issue is not employee negligence, but the absence of a validation control layer in the system.
-
----
-
-## 📍 Where the Problem Occurs
-
-The gap exists at the **internal operational data entry stage**, where counsellors manually transfer and verify candidate details.
-
-Without automated validation:
-
-- Human error becomes more likely
-- Eligibility rules may be inconsistently applied
-- Exceptions are undocumented
-- Operational inefficiencies compound downstream
-
----
-
-## 💡 Proposed Solution
-
-AdmitGuard introduces a structured validation layer between data entry and candidate progression.
-
-The system will:
-
-- ✅ Enforce strict eligibility rules at data entry
-- ⚠️ Support soft-rule overrides with structured rationale
-- 📊 Track exception counts and flag high-risk entries
-- 📝 Maintain an audit log of all submissions
-- ⚙️ Keep rules configurable via JSON (no hardcoding)
-
----
-
-## 🛠️ Planned Tech Stack
-
-- Google AI Studio (Build Mode)
-- HTML / CSS / JavaScript (AI-generated)
-- LocalStorage (prototype persistence)
-- GitHub (version control & documentation)
-
----
+## Author
+Your Name — PG Diploma in AI-ML & Agentic AI Engineering
+IIT Gandhinagar — Cohort 2026
