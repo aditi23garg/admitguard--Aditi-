@@ -1,59 +1,65 @@
-# 🎓 AdmitGuard  
-### Admission Data Validation & Compliance System  
+# 🛡️ AdmitGuard  
+### Admission Data Validation & Compliance System
 
 ---
 
-## 📌 Problem Definition  
+## 📌 Project Overview
 
-### Background  
+AdmitGuard is a rule-based admission validation system designed to address data integrity issues in the internal admission workflow.
 
-The current admission workflow processes hundreds of candidates across multiple programs. Candidate information is collected and then manually entered into internal Excel or Google Sheet trackers by counsellors and operations staff.
+The system enforces eligibility rules at the point of operational data entry, supports structured exception handling, and maintains an audit trail for compliance monitoring.
 
-### Core Issue  
-
-The system lacks **structured, rule-based validation at the point of internal data entry**.
-
-While data may be transferred or stored efficiently, there is no automated enforcement of eligibility criteria such as age limits, qualification thresholds, score cutoffs, or interview status logic.
-
-As a result:
-
-- ❌ Ineligible candidates may progress to screening or interview stages  
-- ⏳ Operational time is wasted on avoidable cases  
-- ⚠️ Errors are discovered late during document verification  
-- 📉 Candidate experience suffers due to late-stage rejections  
-- 🧾 No structured audit trail exists for eligibility exceptions  
-
-### Root Cause  
-
-The current process relies heavily on manual judgment and memory.  
-There is no embedded validation engine to enforce business rules consistently.
-
-This creates a system-level control gap, not an employee performance issue.
+This project is built using AI-assisted development (Google AI Studio – Build Mode).
 
 ---
 
-## 💡 Proposed Solution  
+## 🚨 Business Problem
 
-We propose building **AdmitGuard**, a lightweight rule-based admission validation system that introduces a compliance control layer within the admission pipeline.
+The current admission workflow relies on manual data entry into Excel sheets.
 
-### 🎯 Objectives  
+- No system-enforced validation at entry
+- Eligibility checks depend on human judgment
+- Ineligible candidates progress through the pipeline
+- Errors are detected late during document verification
+- No structured tracking of exceptions
+- Compliance and operational risks increase
 
-- 🔒 Enforce strict eligibility rules at the time of data entry  
-- 🟡 Support controlled overrides for soft-rule violations  
-- 🧾 Capture structured rationale for every approved exception  
-- ⚙️ Store validation rules in a configurable format  
-- 📊 Maintain an audit trail of all submissions  
+The issue is not employee negligence, but the absence of a validation control layer in the system.
 
-### 🏗️ Conceptual Workflow  
-Candidate Application
-↓
-AdmitGuard Validation Engine
-↓
-Screening & Interview Process
-↓
-Final Enrollment
+---
 
+## 📍 Where the Problem Occurs
 
-AdmitGuard acts as a validation firewall between data collection and candidate progression, ensuring compliance before operational resources are invested.
+The gap exists at the **internal operational data entry stage**, where counsellors manually transfer and verify candidate details.
+
+Without automated validation:
+
+- Human error becomes more likely
+- Eligibility rules may be inconsistently applied
+- Exceptions are undocumented
+- Operational inefficiencies compound downstream
+
+---
+
+## 💡 Proposed Solution
+
+AdmitGuard introduces a structured validation layer between data entry and candidate progression.
+
+The system will:
+
+- ✅ Enforce strict eligibility rules at data entry
+- ⚠️ Support soft-rule overrides with structured rationale
+- 📊 Track exception counts and flag high-risk entries
+- 📝 Maintain an audit log of all submissions
+- ⚙️ Keep rules configurable via JSON (no hardcoding)
+
+---
+
+## 🛠️ Planned Tech Stack
+
+- Google AI Studio (Build Mode)
+- HTML / CSS / JavaScript (AI-generated)
+- LocalStorage (prototype persistence)
+- GitHub (version control & documentation)
 
 ---
