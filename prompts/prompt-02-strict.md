@@ -59,3 +59,5 @@ rules pass.
 Regex patterns are powerful for validation.
 /^\d{10}$/ means: start(^), exactly 10 digits(\d{10}), end($)
 Being specific about what "valid" means gives better results.
+
+## Status: Complete
