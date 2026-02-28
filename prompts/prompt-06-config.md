@@ -94,3 +94,5 @@ currentYear + 4 will always be correct.
 2030 hardcoded will be wrong in 2027.
 Rules in a config object = easy to update without
 touching the validation logic.
+
+## Status: Complete
