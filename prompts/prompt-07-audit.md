@@ -118,3 +118,5 @@ localStorage as fallback ensures data is never
 lost even if internet connection fails.
 
 ## Status: Complete
+
+## Google Sheets: Integrated
