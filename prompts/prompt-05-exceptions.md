@@ -82,3 +82,5 @@ not controlled by the user.
 The excActive and softViolated objects together 
 determine if an exception is truly "active".
 Both must be true for the counter to increment.
+
+## Status: Complete
