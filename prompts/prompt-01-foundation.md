@@ -2,9 +2,13 @@
 
 ## Sprint: 1
 ## Purpose: Build the basic form with all 11 fields
+## Tool: Claude AI (claude.ai)
 
-## The Prompt:
+---
 
+## The Prompt
+
+```
 Role: You are a senior frontend developer building 
 an internal business tool for an education company.
 
@@ -33,11 +37,30 @@ Constraints:
 - Submit button at the bottom
 - Do NOT add any validation logic yet. 
   Just build the form structure first.
+```
 
-## Result:
+---
 
+## What the AI Generated
+- Complete HTML file with all 11 fields
+- Dark professional theme with CSS variables
+- Card-based layout with section grouping
+- Submit button at the bottom
+- Space for error messages below each field
 
-## What Worked:
+## What Worked
+- Form structure was clean and professional
+- Dark theme looked good immediately
+- Two-column grid layout was correct
+- Dropdown options were correctly set
 
+## What Needed Fixing
+- Percentage/CGPA toggle needed refinement
+- Offer Letter Yes/No toggle needed custom styling
+- Header subtitle had "Futurense Technologies" branding
+  → Changed to generic "Admission Data Validation & Compliance System"
 
-## What Needed Fixing:
+## Key Learning
+Starting with structure only (no validation) was the right approach.
+Trying to build everything in one prompt produces messy output.
+One feature at a time = cleaner, more controllable result.
