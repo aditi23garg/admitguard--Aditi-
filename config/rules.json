@@ -1,0 +1,301 @@
+{
+  "version": "1.0",
+  "program": "PG Diploma in AI-ML & Agentic AI Engineering",
+  "institution": "IIT Gandhinagar",
+  "lastUpdated": "2026-02-27",
+  "updatedBy": "Aditi Garg",
+
+  "rationaleConfig": {
+    "minLength": 30,
+    "requiredKeywords": [
+      "approved by",
+      "special case",
+      "documentation pending",
+      "waiver granted"
+    ],
+    "description": "Exception rationale must be at least 30 characters and contain at least one required keyword"
+  },
+
+  "systemRules": {
+    "maxExceptionsBeforeFlag": 2,
+    "description": "If exceptions on a single entry exceed this number, entry is flagged for manager review"
+  },
+
+  "rules": [
+
+    {
+      "id": 1,
+      "field": "full_name",
+      "label": "Full Name",
+      "type": "strict",
+      "exceptionAllowed": false,
+      "validations": {
+        "required": true,
+        "minLength": 2,
+        "noNumbers": true,
+        "noSpecialChars": true,
+        "noRepeatingChars": true,
+        "mustHaveVowel": true
+      },
+      "errorMessages": {
+        "required": "Full name is required",
+        "minLength": "Name must be at least 2 characters",
+        "noNumbers": "Name cannot contain numbers",
+        "noSpecialChars": "Name cannot contain special characters (@, #, !, etc.)",
+        "noRepeatingChars": "Name looks invalid — repeated characters detected",
+        "mustHaveVowel": "Name looks invalid — must contain at least one vowel"
+      },
+      "description": "Candidate's full legal name"
+    },
+
+    {
+      "id": 2,
+      "field": "email",
+      "label": "Email Address",
+      "type": "strict",
+      "exceptionAllowed": false,
+      "validations": {
+        "required": true,
+        "validFormat": true,
+        "domainWhitelist": {
+          "personalDomains": [
+            "gmail.com", "yahoo.com", "yahoo.in", "yahoo.co.in",
+            "outlook.com", "outlook.in", "hotmail.com", "hotmail.in",
+            "icloud.com", "me.com", "mac.com",
+            "protonmail.com", "proton.me",
+            "rediffmail.com", "rediff.com",
+            "live.com", "live.in",
+            "zoho.com", "aol.com",
+            "ymail.com", "googlemail.com"
+          ],
+          "blockedDomains": [
+            "xyz.com", "abc.com", "test.com", "fake.com",
+            "example.com", "dummy.com", "temp.com", "mailinator.com",
+            "guerrillamail.com", "throwaway.com", "nomail.com",
+            "invalid.com", "nothing.com", "blah.com", "asdf.com",
+            "qwerty.com", "sample.com", "domain.com"
+          ],
+          "allowedExtensions": [
+            ".edu", ".ac.in", ".edu.in",
+            ".com", ".in", ".org", ".net", ".co.in"
+          ]
+        }
+      },
+      "errorMessages": {
+        "required": "Email is required",
+        "validFormat": "Enter a valid email format (e.g. name@gmail.com)",
+        "blockedDomain": "This domain is not allowed. Use a real email address.",
+        "fakeDomain": "Email domain looks fake — please use a real email address",
+        "unrecognisedDomain": "Email domain not recognised. Use a valid personal or company email."
+      },
+      "description": "Candidate's active email address"
+    },
+
+    {
+      "id": 3,
+      "field": "phone",
+      "label": "Phone Number",
+      "type": "strict",
+      "exceptionAllowed": false,
+      "validations": {
+        "required": true,
+        "exactDigits": 10,
+        "startsWith": [6, 7, 8, 9],
+        "noAllSameDigits": true,
+        "noSingleDigitRepeatingMoreThan": 6,
+        "noSequentialPattern": true
+      },
+      "errorMessages": {
+        "required": "Phone number is required",
+        "exactDigits": "Must be exactly 10 digits",
+        "startsWith": "Must start with 6, 7, 8, or 9",
+        "noAllSameDigits": "Phone number looks fake — all digits are the same",
+        "noSingleDigitRepeating": "Phone number looks fake — a digit repeats too many times",
+        "noSequentialPattern": "Phone number looks fake — sequential pattern detected"
+      },
+      "description": "10-digit Indian mobile number"
+    },
+
+    {
+      "id": 4,
+      "field": "dob",
+      "label": "Date of Birth",
+      "type": "soft",
+      "exceptionAllowed": true,
+      "validations": {
+        "required": true,
+        "noFutureDate": true,
+        "minYear": 1900,
+        "minAge": 18,
+        "maxAge": 35
+      },
+      "errorMessages": {
+        "required": "Date of birth is required",
+        "noFutureDate": "Date of birth cannot be in the future",
+        "minYear": "Please enter a valid date of birth — year cannot be before 1900",
+        "ageRange": "Age must be between 18 and 35 years"
+      },
+      "description": "Candidate's date of birth — used to calculate age"
+    },
+
+    {
+      "id": 5,
+      "field": "qualification",
+      "label": "Highest Qualification",
+      "type": "strict",
+      "exceptionAllowed": false,
+      "validations": {
+        "required": true,
+        "allowedValues": [
+          "B.Tech", "B.E.", "B.Sc", "BCA",
+          "M.Tech", "M.Sc", "MCA", "MBA"
+        ]
+      },
+      "errorMessages": {
+        "required": "Please select a qualification",
+        "allowedValues": "Qualification must be one of the listed options"
+      },
+      "description": "Candidate's highest academic qualification"
+    },
+
+    {
+      "id": 6,
+      "field": "grad_year",
+      "label": "Graduation Year",
+      "type": "soft",
+      "exceptionAllowed": true,
+      "validations": {
+        "required": true,
+        "minYear": 2015,
+        "maxYear": "currentYear + 4",
+        "absoluteMin": 1950
+      },
+      "errorMessages": {
+        "required": "Graduation year is required",
+        "maxYear": "Graduation year cannot exceed current year + 4",
+        "absoluteMin": "Please enter a valid graduation year",
+        "softRange": "Year is outside the preferred 2015 to present+4 range"
+      },
+      "description": "Year candidate completed their highest qualification. Max = current year + 4 (dynamic)"
+    },
+
+    {
+      "id": 7,
+      "field": "score",
+      "label": "Percentage / CGPA",
+      "type": "soft",
+      "exceptionAllowed": true,
+      "validations": {
+        "required": true,
+        "modes": {
+          "percentage": {
+            "min": 0,
+            "max": 100,
+            "threshold": 60
+          },
+          "cgpa": {
+            "min": 0,
+            "max": 10,
+            "threshold": 6.0
+          }
+        }
+      },
+      "errorMessages": {
+        "required": "Score is required",
+        "percentage": {
+          "negative": "Percentage cannot be negative",
+          "exceeds": "Percentage cannot exceed 100%",
+          "threshold": "Percentage is below minimum 60%"
+        },
+        "cgpa": {
+          "negative": "CGPA cannot be negative",
+          "exceeds": "CGPA cannot exceed 10.0",
+          "threshold": "CGPA is below minimum 6.0"
+        }
+      },
+      "description": "Academic score — either percentage (0-100) or CGPA (0-10)"
+    },
+
+    {
+      "id": 8,
+      "field": "test_score",
+      "label": "Screening Test Score",
+      "type": "soft",
+      "exceptionAllowed": true,
+      "validations": {
+        "required": true,
+        "min": 0,
+        "max": 100,
+        "threshold": 40
+      },
+      "errorMessages": {
+        "required": "Test score is required",
+        "negative": "Test score cannot be negative",
+        "exceeds": "Test score cannot exceed 100",
+        "threshold": "Test score is below minimum 40"
+      },
+      "description": "Score from screening test — out of 100"
+    },
+
+    {
+      "id": 9,
+      "field": "interview_status",
+      "label": "Interview Status",
+      "type": "strict",
+      "exceptionAllowed": false,
+      "validations": {
+        "required": true,
+        "allowedValues": ["Cleared", "Waitlisted", "Rejected"],
+        "blockIfValue": "Rejected"
+      },
+      "errorMessages": {
+        "required": "Please select interview status",
+        "blockIfRejected": "Rejected candidates cannot be enrolled. Submission is blocked."
+      },
+      "description": "Outcome of candidate interview"
+    },
+
+    {
+      "id": 10,
+      "field": "aadhaar",
+      "label": "Aadhaar Number",
+      "type": "strict",
+      "exceptionAllowed": false,
+      "validations": {
+        "required": true,
+        "exactDigits": 12,
+        "noLetters": true
+      },
+      "errorMessages": {
+        "required": "Aadhaar number is required",
+        "exactDigits": "Must be exactly 12 digits, no letters",
+        "noLetters": "Aadhaar cannot contain letters or special characters"
+      },
+      "description": "12-digit Indian government ID number"
+    },
+
+    {
+      "id": 11,
+      "field": "offer_letter",
+      "label": "Offer Letter Sent",
+      "type": "strict",
+      "exceptionAllowed": false,
+      "validations": {
+        "required": true,
+        "allowedValues": ["Yes", "No"],
+        "conditionalRule": {
+          "ifValue": "Yes",
+          "thenField": "interview_status",
+          "thenMustBe": ["Cleared", "Waitlisted"]
+        }
+      },
+      "errorMessages": {
+        "required": "Please select Yes or No",
+        "conditional": "Cannot send offer letter to a Rejected candidate",
+        "invalidStatus": "Offer letter only allowed if status is Cleared or Waitlisted"
+      },
+      "description": "Whether offer letter has been sent to candidate"
+    }
+
+  ]
+}
