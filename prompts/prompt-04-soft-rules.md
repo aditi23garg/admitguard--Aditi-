@@ -72,3 +72,5 @@ Soft rules need TWO checks:
 1. Is the rule violated? → show warning
 2. If violated, is the exception valid? → allow/block submit
 The canSubmit() function must check BOTH conditions.
+
+## Status: Complete
